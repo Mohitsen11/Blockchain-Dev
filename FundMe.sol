@@ -79,4 +79,14 @@ contract FundMe {
         _;
     }
 
+    // unique receive function which handles the transaction that does not specify any funtion to execute and does not give calldata
+    receive() external payable { 
+        fund();
+    }
+
+    // unique fallback funtion which handles the transaction that provide the calldata whcih does not matches with the exisitng function to execute
+    fallback() external payable {
+        fund();
+     }
+
 }
