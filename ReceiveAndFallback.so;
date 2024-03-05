@@ -1,0 +1,16 @@
+// SPDX-License-Identifier: MIT
+
+pragma solidity ^0.8.7;
+
+contract SaveGas{
+
+    uint256 public myValue;
+
+    receive() external payable {
+        myValue = 1;
+    }
+
+    fallback() external payable { 
+        myValue = 2;
+    }
+}
